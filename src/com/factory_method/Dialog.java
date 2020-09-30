@@ -1,17 +1,21 @@
 package com.factory_method;
 
-public abstract class Dialog {
+public class Dialog {
 
-    public void renderWindow() {
+    String type;
+
+    public void renderWindow(String type) {
         // ... other code ...
-
+        this.type = type;
         Button okButton = createButton();
         okButton.render();
     }
 
-    /**
-     * Subclasses will override this method in order to create specific button
-     * objects.
-     */
-    public abstract Button createButton();
+    public Button createButton() {
+        if (type.equals("HTML")) {
+            return new HtmlButton();
+        } else {
+            return new NativeButton();
+        }
+    }
 }

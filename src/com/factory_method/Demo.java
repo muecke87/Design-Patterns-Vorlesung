@@ -1,11 +1,13 @@
 package com.factory_method;
 
 public class Demo {
-    private static Dialog dialog;
+    private static Dialog dialog = new Dialog();
+    private static String type;
 
     public static void main(String[] args) {
         configure();
         runBusinessLogic();
+
     }
 
     /**
@@ -14,9 +16,9 @@ public class Demo {
      */
     static void configure() {
         if (System.getProperty("os.name").equals("Mac OS X")) {
-            dialog = new NativeDialog();
+            type = "NATIVE";
         } else {
-            dialog = new HtmlDialog();
+            type = "HTML";
         }
     }
 
@@ -26,6 +28,6 @@ public class Demo {
      * with and what kind of product it returns.
      */
     static void runBusinessLogic() {
-        dialog.renderWindow();
+        dialog.renderWindow(type);
     }
 }
