@@ -1,4 +1,4 @@
-package com.company;
+package com.factory_method;
 
 public class HtmlButton implements Button {
     public void render() {

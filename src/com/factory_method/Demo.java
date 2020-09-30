@@ -1,4 +1,4 @@
-package com.company;
+package com.factory_method;
 
 public class Demo {
     private static Dialog dialog;
