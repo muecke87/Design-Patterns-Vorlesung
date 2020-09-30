@@ -14,12 +14,4 @@ public abstract class Dialog {
      * objects.
      */
     public abstract Button createButton();
-    public Button createButton(String buttonType) {
-        if(buttonType.equals("HTML")) {
-            return new HtmlButton();
-        } else {
-            return new NativeButton();
-        }
-    };
-
 }
