@@ -15,6 +15,7 @@ public class Vehicle {
         this.price = builder.price;
     }
 
+    // nested static class
     public static class Builder {
         private VehicleType type;
         private double price;
