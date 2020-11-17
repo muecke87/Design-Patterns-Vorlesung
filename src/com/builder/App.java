@@ -3,28 +3,27 @@ package com.builder;
 public class App {
     public static void main(String[] args) {
         Vehicle motorCycle = new Vehicle
-                .Builder()
+                .Builder(VehicleType.MOTORCYCLE)
                     .engine(new Engine(100, 2, "unleaded"))
                     .seats(2)
-                    .type(VehicleType.MOTORCYCLE)
                     .wheels(2)
-                    .build();
+                    .build(); // creates new instance of Vehicle and returns it
 
         System.out.println("Motorcycle created via Builder: " + motorCycle);
 
         Vehicle bicycle = new Vehicle
-                .Builder()
+                .Builder(VehicleType.BICYCLE)
                     .seats(1)
-                    .type(VehicleType.BICYCLE)
+                    .price(700)
                     .wheels(2)
                     .build();
 
         System.out.println("Bicycle created via Builder: " + bicycle);
 
         Vehicle snowmobile = new Vehicle
-                .Builder()
+                .Builder(VehicleType.SNOWMOBILE)
                     .seats(5)
-                    .type(VehicleType.SNOWMOBILE)
+                    .price(1000)
                     .engine(new Engine(130, 4, "diesel"))
                     .build();
 

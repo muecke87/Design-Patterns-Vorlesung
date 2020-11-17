@@ -2,6 +2,7 @@ package com.builder;
 
 public class Vehicle {
     private VehicleType type;
+    private double price;
     private int seats;
     private Engine engine;
     private int wheels;
@@ -11,18 +12,26 @@ public class Vehicle {
         this.seats = builder.seats;
         this.engine = builder.engine;
         this.wheels = builder.wheels;
+        this.price = builder.price;
     }
 
     public static class Builder {
         private VehicleType type;
+        private double price;
         private int seats;
         private Engine engine;
         private int wheels;
 
-        public Builder type(VehicleType type) {
+        // mandatory properties in constructor
+        public Builder(VehicleType type) {
             this.type = type;
+        }
+
+        public Builder price(double price) {
+            this.price = price;
             return this;
         }
+
         public Builder seats(int seats) {
             this.seats = seats;
             return this;
@@ -44,6 +53,7 @@ public class Vehicle {
     public String toString() {
         return "Vehicle{" +
                 "type=" + type +
+                ", price=" + price +
                 ", seats=" + seats +
                 ", engine=" + engine +
                 ", wheels=" + wheels +
