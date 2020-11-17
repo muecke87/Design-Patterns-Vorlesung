@@ -2,20 +2,31 @@ package com.builder;
 
 public class App {
     public static void main(String[] args) {
+        Vehicle motorCycle = new Vehicle
+                .Builder(VehicleType.MOTORCYCLE)
+                    .engine(new Engine(100, 2, "unleaded"))
+                    .seats(2)
+                    .wheels(2)
+                    .build(); // creates new instance of Vehicle and returns it
 
-        // price not relevant
-        Vehicle motorCycle = new Vehicle(VehicleType.MOTORCYCLE, 0, 2, new Engine(100, 2, "unleaded"), 2);
+        System.out.println("Motorcycle created via Builder: " + motorCycle);
 
-        System.out.println("Motorcycle created: " + motorCycle);
+        Vehicle bicycle = new Vehicle
+                .Builder(VehicleType.BICYCLE)
+                    .seats(1)
+                    .price(700)
+                    .wheels(2)
+                    .build();
 
-        // engine not relevant
-        Vehicle bicycle = new Vehicle(VehicleType.BICYCLE, 700, 1, null, 2);
+        System.out.println("Bicycle created via Builder: " + bicycle);
 
-        System.out.println("Bicycle created: " + bicycle);
+        Vehicle snowmobile = new Vehicle
+                .Builder(VehicleType.SNOWMOBILE)
+                    .seats(5)
+                    .price(1000)
+                    .engine(new Engine(130, 4, "diesel"))
+                    .build();
 
-        // wheels not relevant
-        Vehicle snowmobile = new Vehicle(VehicleType.SNOWMOBILE, 1000, 5, new Engine(130, 4, "diesel"), 0);
-
-        System.out.println("Snowmobile created: " + snowmobile);
+        System.out.println("Snowmobile created via Builder: " + snowmobile);
     }
 }
