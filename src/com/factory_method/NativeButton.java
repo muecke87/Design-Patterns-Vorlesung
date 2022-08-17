@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+// Concrete Product
 public class NativeButton implements Button {
     JPanel panel = new JPanel();
     JFrame frame = new JFrame();

@@ -1,5 +1,6 @@
 package com.factory_method;
 
+// Concrete Product
 public class HtmlButton implements Button {
     public void render() {
         System.out.println("<button>Exit</button>");

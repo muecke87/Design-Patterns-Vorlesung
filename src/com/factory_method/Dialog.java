@@ -1,5 +1,6 @@
 package com.factory_method;
 
+// Creator
 public abstract class Dialog {
 
     public void renderWindow() {
@@ -13,5 +14,8 @@ public abstract class Dialog {
      * Subclasses will override this method in order to create specific button
      * objects.
      */
+
+    // Factory Method
     public abstract Button createButton();
+
 }
