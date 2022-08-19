@@ -1,5 +1,6 @@
 package com.abstract_factory;
 
+//ConcreteFactory
 public class HtmlDialog extends Dialog {
 
     @Override

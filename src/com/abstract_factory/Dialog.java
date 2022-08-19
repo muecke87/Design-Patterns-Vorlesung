@@ -1,5 +1,6 @@
 package com.abstract_factory;
 
+// AbstractFactory
 public abstract class Dialog {
 
     public void renderWindow() {
